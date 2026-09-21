@@ -10,7 +10,7 @@ export interface Milestone { period: string; title: string; org: string; desc: s
 export const profile = {
   name: 'Aayush Rajbanshi', short: 'Aayush', initials: 'AR',
   role: 'Graphic Designer & Photoshop Instructor',
-  photo: '/me.jpg',
+  photo: '/me.jpeg',
   email: 'aayushrajbanshi126@gmail.com', location: 'Jhapa, Nepal',
   github: 'https://github.com/aayushrajbanshi', linkedin: 'https://www.linkedin.com/in/aayush-rajbanshi/',
 }
