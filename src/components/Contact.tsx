@@ -17,11 +17,13 @@ function validate(v: ContactPayload): Errors {
   return e
 }
 
+const pretty = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+
 const info = [
   { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
   { icon: MapPin, label: 'Location', value: profile.location },
-  { icon: Github, label: 'GitHub', value: 'github.com/your-handle', href: profile.github },
-  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/your-handle', href: profile.linkedin },
+  { icon: Github, label: 'GitHub', value: pretty(profile.github), href: profile.github },
+  { icon: Linkedin, label: 'LinkedIn', value: pretty(profile.linkedin), href: profile.linkedin },
 ]
 
 export default function Contact() {
