@@ -1,0 +1,100 @@
+media:
+  input: public/uploads
+  output: /uploads
+
+content:
+  - name: profile
+    label: Profile & Contact
+    type: file
+    path: src/content/profile.json
+    format: json
+    fields:
+      - { name: name, label: Full name, type: string }
+      - { name: short, label: Short name (logo & nav), type: string }
+      - { name: initials, label: Initials (shown if no photo), type: string }
+      - { name: role, label: Job title, type: string }
+      - { name: photo, label: Photo, type: image }
+      - { name: email, label: Email, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: github, label: GitHub URL, type: string }
+      - { name: linkedin, label: LinkedIn URL, type: string }
+
+  - name: about
+    label: About & Stats
+    type: file
+    path: src/content/about.json
+    format: json
+    fields:
+      - { name: intro, label: Intro line, type: text }
+      - { name: what, label: What I do, type: text }
+      - { name: learning, label: Currently learning, type: text }
+      - { name: goals, label: Career goals, type: text }
+      - name: stats
+        label: Stats (animated counters)
+        type: object
+        list: true
+        fields:
+          - { name: label, type: string }
+          - { name: value, type: number }
+          - { name: suffix, label: Suffix (e.g. +), type: string }
+
+  - name: skills
+    label: Skills
+    type: file
+    path: src/content/skills.json
+    format: json
+    list: true
+    fields:
+      - { name: name, type: string }
+      - name: cat
+        label: Category
+        type: select
+        options:
+          values: [Design, Frontend, Backend, Database, Tools, AI]
+      - { name: desc, label: Short description, type: string }
+      - { name: level, label: Skill level (0-100), type: number }
+
+  - name: projects
+    label: Projects
+    type: file
+    path: src/content/projects.json
+    format: json
+    list: true
+    fields:
+      - { name: id, label: ID (lowercase, no spaces), type: string }
+      - { name: title, type: string }
+      - { name: type, label: Type (Web App, AI Tool...), type: string }
+      - { name: desc, label: Description, type: text }
+      - { name: hue, label: Preview colour (0-360), type: number }
+      - { name: tech, label: Technologies, type: string, list: true }
+      - { name: features, type: string, list: true }
+      - { name: challenges, type: string, list: true }
+      - { name: github, label: GitHub link, type: string }
+      - { name: live, label: Live demo link, type: string }
+
+  - name: timeline
+    label: Experience Timeline
+    type: file
+    path: src/content/timeline.json
+    format: json
+    list: true
+    fields:
+      - { name: period, label: Period (e.g. 2023 - Present), type: string }
+      - { name: title, type: string }
+      - { name: org, label: Organisation, type: string }
+      - { name: desc, label: Description, type: text }
+      - { name: tags, type: string, list: true }
+
+  - name: services
+    label: Services
+    type: file
+    path: src/content/services.json
+    format: json
+    list: true
+    fields:
+      - name: icon
+        type: select
+        options:
+          values: [Palette, Code2, LayoutDashboard, Smartphone, Sparkles, Gauge]
+      - { name: title, type: string }
+      - { name: desc, label: Description, type: text }
