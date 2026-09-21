@@ -26,17 +26,12 @@ export default function About() {
   return (
     <Section id="about" label="Get to know me" title="About Me" sub={about.intro}>
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-        <motion.div {...reveal()} className="glass overflow-hidden p-5">
-          <div className="grid aspect-[4/5] place-items-center overflow-hidden rounded-xl bg-gradient-to-br from-[#7c5cff]/40 via-[#5b6cff]/25 to-[#38bdf8]/30">
+        <motion.div {...reveal()} className="glass self-start overflow-hidden p-5">
+          <div className="grid aspect-square place-items-center overflow-hidden rounded-xl bg-gradient-to-br from-[#7c5cff]/40 via-[#5b6cff]/25 to-[#38bdf8]/30">
             {profile.photo
               ? <img src={profile.photo} alt={`Portrait of ${profile.name}`} loading="lazy" className="h-full w-full object-cover object-top" />
               : <span className="text-6xl font-extrabold text-white/90">{profile.initials}</span>}
           </div>
-          <pre className="mt-4 overflow-x-auto rounded-xl border border-[var(--line)] bg-black/30 p-4 text-xs leading-6 text-[var(--muted)]"><code>{`const me = {
-  role: "designer + developer",
-  tools: ["Photoshop", "React"],
-  status: "available",
-}`}</code></pre>
         </motion.div>
         <div className="grid gap-3">
           {blocks.map((b, i) => (
