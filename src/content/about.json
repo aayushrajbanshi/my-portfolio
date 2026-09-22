@@ -1,8 +1,9 @@
 {
   "stats": [
     {
-      "label": "Project",
-      "value": 0
+      "label": "Students",
+      "value": 20,
+      "suffix": "+"
     }
   ]
 }
