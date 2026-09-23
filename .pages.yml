@@ -14,10 +14,28 @@ content:
       - { name: initials, label: Initials (shown if no photo), type: string }
       - { name: role, label: Job title, type: string }
       - { name: photo, label: Photo, type: image }
+      - { name: resume, label: "CV path (upload cv.pdf to /public on GitHub, keep this as /cv.pdf)", type: string }
       - { name: email, label: Email, type: string }
       - { name: location, label: Location, type: string }
       - { name: github, label: GitHub URL, type: string }
       - { name: linkedin, label: LinkedIn URL, type: string }
+
+  - name: theme
+    label: Colors
+    type: file
+    path: src/content/theme.json
+    format: json
+    fields:
+      - { name: bg, label: Background, type: color }
+      - { name: bg2, label: Background 2, type: color }
+      - { name: bg3, label: Background 3, type: color }
+      - { name: surface, label: Card surface, type: color }
+      - { name: surface2, label: Card surface 2, type: color }
+      - { name: violet, label: Accent violet, type: color }
+      - { name: indigo, label: Accent indigo, type: color }
+      - { name: blue, label: Accent blue, type: color }
+      - { name: text, label: Text, type: color }
+      - { name: muted, label: Muted text, type: color }
 
   - name: about
     label: About & Stats
