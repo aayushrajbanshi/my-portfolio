@@ -1,0 +1,8 @@
+[
+  { "icon": "Palette", "title": "Graphic Design", "desc": "Social media posters, wedding cards and ID card designs that look sharp on screen and in print." },
+  { "icon": "Code2", "title": "Web Development", "desc": "Fast, responsive websites and web apps built with React, TypeScript and Tailwind." },
+  { "icon": "LayoutDashboard", "title": "UI/UX Design", "desc": "Clean interfaces and user flows, from wireframes in Figma to polished screens." },
+  { "icon": "Smartphone", "title": "Mobile Applications", "desc": "Mobile-friendly apps that feel smooth and native on any phone." },
+  { "icon": "Sparkles", "title": "AI Integration", "desc": "Chatbots, assistants and automation powered by modern AI APIs and LLMs." },
+  { "icon": "Gauge", "title": "Backend & Optimization", "desc": "APIs, databases and performance tuning so your site stays quick and reliable." }
+]
