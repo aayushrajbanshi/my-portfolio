@@ -1,11 +1,14 @@
-import { motion } from 'framer-motion'
-import { ArrowRight, Mail } from 'lucide-react'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ArrowRight, FileText, Mail } from 'lucide-react'
 import Lanyard from './Lanyard'
+import CvModal from './CvModal'
 import { profile } from '../data/site'
 
 const item = { hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0, transition: { duration: 0.55 } } }
 
 export default function Hero() {
+  const [cvOpen, setCvOpen] = useState(false)
   return (
     <section id="home" className="relative overflow-hidden">
       <div className="mx-auto grid min-h-[100svh] max-w-6xl items-center gap-4 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
@@ -15,7 +18,7 @@ export default function Hero() {
             AVAILABLE FOR WORK
           </motion.span>
           <motion.h1 variants={item} className="mt-5 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-            Hi, I’m <span className="grad">{profile.name}</span>
+            Hi, I'm <span className="grad">{profile.name}</span>
           </motion.h1>
           <motion.p variants={item} className="mt-3 text-lg font-semibold text-cyan-300 sm:text-xl">{profile.role}</motion.p>
           <motion.p variants={item} className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)] lg:mx-0">
@@ -24,10 +27,14 @@ export default function Hero() {
           <motion.div variants={item} className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a href="#projects" className="btn btn-primary group">View My Work <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></a>
             <a href="#contact" className="btn btn-ghost group"><Mail size={16} className="transition-transform group-hover:-rotate-12" /> Contact Me</a>
+            {profile.resume && (
+              <button type="button" onClick={() => setCvOpen(true)} className="btn btn-ghost group"><FileText size={16} /> My CV</button>
+            )}
           </motion.div>
         </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.8 }}><Lanyard /></motion.div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.8 }} className="min-w-0"><Lanyard /></motion.div>
       </div>
+      <AnimatePresence>{cvOpen && <CvModal onClose={() => setCvOpen(false)} />}</AnimatePresence>
     </section>
   )
 }

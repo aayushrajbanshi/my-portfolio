@@ -3,17 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="1; url=https://app.pagescms.org/aayushrajbanshi/my-portfolio" />
-    <title>Opening admin…</title>
+    <title>Admin</title>
     <style>
-      body { margin:0; min-height:100svh; display:grid; place-items:center; background:#050816; color:#f4f6ff; font-family:Inter,system-ui,sans-serif; text-align:center; padding:24px; }
-      a { color:#9a86ff; }
+      body { margin:0; min-height:100svh; display:grid; place-items:center; background:#050816; color:#f4f6ff; font-family:Inter,system-ui,sans-serif; padding:24px; }
+      .card { text-align:center; max-width:320px; }
+      input { width:100%; box-sizing:border-box; padding:12px; border-radius:10px; border:1px solid rgba(124,140,255,0.3); background:rgba(255,255,255,0.05); color:#fff; font-size:16px; margin-top:16px; }
+      button { width:100%; padding:12px; border-radius:10px; border:0; background:linear-gradient(135deg,#7c5cff,#5b6cff); color:#fff; font-weight:600; margin-top:10px; cursor:pointer; }
+      p.err { color:#f87171; font-size:13px; min-height:18px; }
+      p.note { color:#94a0bf; font-size:12px; margin-top:18px; line-height:1.5; }
     </style>
   </head>
   <body>
-    <div>
-      <p>Opening the content editor…</p>
-      <p>If it doesn't open automatically, <a href="https://app.pagescms.org/aayushrajbanshi/my-portfolio">click here</a>.</p>
+    <div class="card">
+      <p>Enter the admin passphrase to continue.</p>
+      <input id="pw" type="password" autofocus placeholder="Passphrase" />
+      <button id="go">Continue</button>
+      <p class="err" id="err"></p>
+      <p class="note">This only hides the link from casual visitors. Real access is controlled by who can sign in to your GitHub account.</p>
     </div>
+    <script>
+      // CHANGE THIS to your own passphrase before publishing.
+      var PASSPHRASE = "change-me-123";
+      var DEST = "https://app.pagescms.org/aayushrajbanshi/my-portfolio";
+
+      if (sessionStorage.getItem("admin-ok") === "1") {
+        location.replace(DEST);
+      }
+      document.getElementById("go").addEventListener("click", check);
+      document.getElementById("pw").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") check();
+      });
+      function check() {
+        var v = document.getElementById("pw").value;
+        if (v === PASSPHRASE) {
+          sessionStorage.setItem("admin-ok", "1");
+          location.replace(DEST);
+        } else {
+          document.getElementById("err").textContent = "Incorrect passphrase.";
+        }
+      }
+    </script>
   </body>
 </html>

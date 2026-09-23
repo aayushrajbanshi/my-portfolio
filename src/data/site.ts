@@ -14,8 +14,12 @@ export interface Project {
 export interface Skill { name: string; cat: SkillCat; desc: string; level: number }
 export interface Milestone { period: string; title: string; org: string; desc: string; tags: string[] }
 export interface Service { icon: string; title: string; desc: string }
+export interface Profile {
+  name: string; short: string; initials: string; role: string; photo: string
+  resume?: string; email: string; location: string; github: string; linkedin: string
+}
 
-export const profile = profileJson
+export const profile = profileJson as Profile
 export const about = aboutJson
 export const stats = aboutJson.stats
 export const skills = skillsJson as Skill[]

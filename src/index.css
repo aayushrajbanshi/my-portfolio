@@ -1,23 +1,25 @@
 @import "tailwindcss";
 
-/* ---- Colour system: edit these to re-theme the whole site ---- */
+/* ---- Colour system: defaults here are a fallback; live values come from
+   src/content/theme.json via ThemeProvider, editable in the admin. ---- */
 :root {
   --bg: #050816; --bg-2: #080b18; --bg-3: #0b1020;
   --surface: #11172a; --surface-2: #151b32;
   --violet: #7c5cff; --indigo: #5b6cff; --blue: #38bdf8;
   --text: #f4f6ff; --muted: #94a0bf; --line: rgba(124, 140, 255, 0.16);
 }
-html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; max-width: 100vw; overflow-x: hidden; }
 body {
-  margin: 0; background: var(--bg); color: var(--text); overflow-x: hidden;
+  margin: 0; max-width: 100vw; background: var(--bg); color: var(--text); overflow-x: hidden;
   font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
 }
+img, svg, video, iframe, pre, table { max-width: 100%; }
 /* ambient gradients + faint grid */
 body::before {
   content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
   background:
-    radial-gradient(60% 50% at 15% 0%, rgba(91, 108, 255, 0.18), transparent 70%),
-    radial-gradient(50% 45% at 90% 30%, rgba(124, 92, 255, 0.14), transparent 70%),
+    radial-gradient(60% 50% at 15% 0%, color-mix(in srgb, var(--indigo) 18%, transparent), transparent 70%),
+    radial-gradient(50% 45% at 90% 30%, color-mix(in srgb, var(--violet) 14%, transparent), transparent 70%),
     linear-gradient(180deg, var(--bg), var(--bg-3));
 }
 body::after {
@@ -33,21 +35,21 @@ body::after {
 .label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .grad { background: linear-gradient(90deg, #9a86ff, #5b8cff 55%, #38d5f8); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .glass {
-  background: linear-gradient(180deg, rgba(21, 27, 50, 0.62), rgba(11, 16, 32, 0.62));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 62%, transparent), color-mix(in srgb, var(--bg-3) 62%, transparent));
   border: 1px solid var(--line); border-radius: 16px; backdrop-filter: blur(14px);
   transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
 }
-.glass:hover { border-color: rgba(139, 123, 255, 0.45); box-shadow: 0 12px 40px -14px rgba(91, 108, 255, 0.5); }
+.glass:hover { border-color: color-mix(in srgb, var(--violet) 45%, transparent); box-shadow: 0 12px 40px -14px color-mix(in srgb, var(--indigo) 50%, transparent); }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 44px; padding: 0 1.25rem; border-radius: 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s; }
 .btn:hover { transform: translateY(-2px) scale(1.02); }
-.btn-primary { background: linear-gradient(135deg, var(--violet), var(--indigo)); box-shadow: 0 8px 28px -8px rgba(124, 92, 255, 0.7); }
-.btn-primary:hover { box-shadow: 0 10px 38px -6px rgba(124, 92, 255, 0.95); }
+.btn-primary { background: linear-gradient(135deg, var(--violet), var(--indigo)); box-shadow: 0 8px 28px -8px color-mix(in srgb, var(--violet) 70%, transparent); }
+.btn-primary:hover { box-shadow: 0 10px 38px -6px color-mix(in srgb, var(--violet) 95%, transparent); }
 .btn-ghost { border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); }
-.btn-ghost:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(139, 123, 255, 0.5); }
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.08); border-color: color-mix(in srgb, var(--violet) 50%, transparent); }
 .chip { display: inline-flex; align-items: center; min-height: 32px; padding: 0 0.75rem; border-radius: 9999px; font-size: 0.75rem; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); color: var(--muted); }
 .field { width: 100%; min-height: 46px; padding: 0.7rem 0.9rem; border-radius: 12px; font-size: 0.9rem; color: var(--text); background: rgba(5, 8, 22, 0.6); border: 1px solid var(--line); transition: border-color 0.2s, box-shadow 0.2s; }
 .field::placeholder { color: #5d688a; }
-.field:focus { outline: none; border-color: var(--violet); box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.25); }
+.field:focus { outline: none; border-color: var(--violet); box-shadow: 0 0 0 3px color-mix(in srgb, var(--violet) 25%, transparent); }
 .field[aria-invalid="true"] { border-color: #f87171; }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 6px; }
 @media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
