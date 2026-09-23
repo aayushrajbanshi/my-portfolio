@@ -45,7 +45,7 @@ export default function About() {
       <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
         {stats.map((s, i) => (
           <motion.div key={s.label} {...reveal(i)} className="glass p-5 text-center">
-            <p className="grad text-3xl font-extrabold sm:text-4xl"><Counter to={s.value} suffix={s.suffix} /></p>
+            <p className="grad text-3xl font-extrabold sm:text-4xl"><Counter to={s.value} suffix={s.suffix ?? ''} /></p>
             <p className="label mt-1">{s.label}</p>
           </motion.div>
         ))}
