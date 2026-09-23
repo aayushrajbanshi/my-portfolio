@@ -1,10 +1,12 @@
 {
-  "what": "I teach Photoshop",
+  "intro": "I'm a graphic designer and Photoshop instructor who also builds for the web.",
+  "what": "I design social media posters, wedding cards and ID cards, and build websites, web and mobile apps, and AI-powered tools.",
+  "learning": "Currently deepening TypeScript, React and backend fundamentals, and experimenting with LLM integrations.",
+  "goals": "Grow into a designer-developer who ships polished, useful digital products end to end.",
   "stats": [
-    {
-      "label": "Students",
-      "value": 20,
-      "suffix": "+"
-    }
+    { "label": "Projects Completed", "value": 120, "suffix": "+" },
+    { "label": "Technologies", "value": 20, "suffix": "+" },
+    { "label": "Years Learning", "value": 5, "suffix": "" },
+    { "label": "Happy Clients", "value": 60, "suffix": "+" }
   ]
 }
