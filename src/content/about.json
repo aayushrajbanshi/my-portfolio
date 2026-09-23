@@ -4,9 +4,24 @@
   "learning": "Currently deepening TypeScript, React and backend fundamentals, and experimenting with LLM integrations.",
   "goals": "Grow into a designer-developer who ships polished, useful digital products end to end.",
   "stats": [
-    { "label": "Projects Completed", "value": 120, "suffix": "+" },
-    { "label": "Technologies", "value": 20, "suffix": "+" },
-    { "label": "Years Learning", "value": 5, "suffix": "" },
-    { "label": "Happy Clients", "value": 60, "suffix": "+" }
+    {
+      "label": "Projects Completed",
+      "value": 50,
+      "suffix": "+"
+    },
+    {
+      "label": "Students",
+      "value": 20,
+      "suffix": "+"
+    },
+    {
+      "label": "Years Learning",
+      "value": 5
+    },
+    {
+      "label": "Happy Clients",
+      "value": 60,
+      "suffix": "+"
+    }
   ]
 }
