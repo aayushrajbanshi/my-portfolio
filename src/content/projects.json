@@ -1,0 +1,50 @@
+[
+  {
+    "id": "assistant", "title": "AI Personal Assistant", "type": "AI Tool",
+    "desc": "A chat assistant that manages notes, reminders and daily planning.",
+    "hue": 265, "tech": ["React", "Python", "LLM API"],
+    "features": ["Natural-language tasks", "Reminders", "Conversation memory"],
+    "challenges": ["Keeping responses fast", "Structuring prompts reliably"],
+    "github": "#", "live": "#"
+  },
+  {
+    "id": "shop", "title": "Modern E-Commerce", "type": "Web App",
+    "desc": "Storefront with cart, filters and a fast checkout flow.",
+    "hue": 220, "tech": ["Next.js", "Tailwind", "PostgreSQL"],
+    "features": ["Product filters", "Cart & checkout", "Admin dashboard"],
+    "challenges": ["Cart state sync", "Image performance"],
+    "github": "#", "live": "#"
+  },
+  {
+    "id": "portfolio", "title": "Portfolio Website", "type": "Website",
+    "desc": "Animated personal site with case studies and a contact form.",
+    "hue": 285, "tech": ["React", "TypeScript", "Framer Motion"],
+    "features": ["Scroll animations", "Project modals", "Responsive layout"],
+    "challenges": ["Mobile-first polish", "Reduced-motion support"],
+    "github": "#", "live": "#"
+  },
+  {
+    "id": "tasks", "title": "Task Management App", "type": "Web App",
+    "desc": "Kanban-style boards with due dates and progress tracking.",
+    "hue": 200, "tech": ["React", "Node.js", "MongoDB"],
+    "features": ["Drag-and-drop boards", "Due dates", "Team sharing"],
+    "challenges": ["Optimistic updates", "Data modelling"],
+    "github": "#", "live": "#"
+  },
+  {
+    "id": "weather", "title": "Weather Application", "type": "Mobile App",
+    "desc": "Clean forecasts with hourly charts and saved locations.",
+    "hue": 190, "tech": ["React", "REST API", "Chart.js"],
+    "features": ["Hourly forecast", "Saved cities", "Offline cache"],
+    "challenges": ["API rate limits", "Readable data visuals"],
+    "github": "#", "live": "#"
+  },
+  {
+    "id": "chat", "title": "AI Chat Application", "type": "AI Tool",
+    "desc": "Streaming chat interface with history and prompt presets.",
+    "hue": 250, "tech": ["TypeScript", "Express", "LLM API"],
+    "features": ["Streaming replies", "Chat history", "Prompt presets"],
+    "challenges": ["Streaming UI states", "Error recovery"],
+    "github": "#", "live": "#"
+  }
+]
