@@ -1,0 +1,22 @@
+[
+  {
+    "period": "2025 — Present", "title": "Designer & Developer", "org": "Freelance",
+    "desc": "Delivering brand, print and web projects for local and remote clients.",
+    "tags": ["Design", "React", "Clients"]
+  },
+  {
+    "period": "2023 — Present", "title": "Photoshop Instructor", "org": "Your Institute",
+    "desc": "Teaching photo editing and poster design to beginner and intermediate students.",
+    "tags": ["Teaching", "Photoshop"]
+  },
+  {
+    "period": "2023", "title": "Started Web Development", "org": "Self-taught",
+    "desc": "Moved from static pages to React, TypeScript and backend basics.",
+    "tags": ["JavaScript", "TypeScript"]
+  },
+  {
+    "period": "2020 — 2023", "title": "Education", "org": "Your School / University",
+    "desc": "Formal studies alongside growing design work.",
+    "tags": ["Education"]
+  }
+]
